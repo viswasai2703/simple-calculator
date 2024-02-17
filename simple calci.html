@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title> 
+        <style>
+            .Calculator{
+                width: fit-content;
+                height:fit-content;
+                border:1px grey;
+                padding:40px;
+                margin: 80px;
+                background-color: blue;
+            }
+         
+            .layout{
+            margin:10px;
+            }
+         input{
+                border:0.5px salmon;
+                padding:30px;
+                margin:5px;
+                content: normal;
+                box-shadow: 5px 5px 5px black;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: xx-large;
+            }
+            #input{
+                text-align-last: right;
+                width: 83%;
+                margin-left: -10px;
+            }
+            .A{
+                display:flex;
+                padding:4px;
+                margin:5px;
+                background-color: black;
+                font-size: x-large;
+            }
+            input:hover{
+                background-color:black;
+                color:white;
+            }
+            .box:hover{
+                background-color:white;
+                color:black;
+            }
+            .box{
+                width:500px;
+                height: 100px;
+                content-visibility: 1;
+                border:5px solid black;
+                border-color: black;
+                margin-top: 1px;
+            }
+        </style>
+        <body>
+            <h1>Calculator</h1>
+            <center>
+                <div class="Calculator">
+                    <div class="g">
+                    <input type="text" id="input">
+                    </div>
+                    <div class="layout">
+                    <form>
+                        <hr>
+                        <div class="A">
+                            <input id="seven"type="button" value="7" onclick="enter('7')">
+                            <input id="eight" type="button" value="8" onclick="enter('8')">
+                            <input id="nine" type="button" value="9" onclick="enter('9')">
+                            <input id="slash" type="button" value="/" onclick="enter('/')">
+                            <input id="ac" style="flex-grow:1"; type="button" value="AC" onclick="del()">
+                        </div>
+                        <div class="A">
+                            <input id="four" type="button" value="4"onclick="enter('4')">
+                            <input id="five" type="button" value="5"onclick="enter('5')">
+                            <input id="six" type="button" value="6"onclick="enter('6')">
+                            <input id="mod" type="button" value="%"onclick="enter('%')">
+                            <input id="mul" style="flex-grow:1"; type="button" value="*">
+                        </div>
+                        <div class="A">
+                            <input id="one" type="button" value="1" onclick="enter('1')">
+                            <input id="two" type="button" value="2" onclick="enter('2')">
+                            <input id="three" type="button" value="3" onclick="enter('3')">
+                            <input id="add" type="button" value="+" onclick="enter('+')">
+                            <input id="sub" style="flex-grow:1" type="button" value="-" onclick="enter('-')">
+                        </div>
+                        <div class="A">
+                            <input id="zero" type="button" value="0"onclick="enter('0')">
+                            <input id="dot" type="button" value="."onclick="enter('.')">
+                            <input id="double" type="button" value="00" onclick="enter('00')">
+                            <input id="equal" style="flex-grow:1"; type="button" value="=" onclick="answer()">
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <script>
+                    function enter(a) {
+                        let input=document.getElementById("input");
+                        input.value=input.value+a;
+                    }
+
+                    function del() {
+                        let input=document.getElementById("input");
+                        input.value="";
+                    }
+                    function answer() 
+                    {
+                        let input=document.getElementById("input");
+                        input.value=eval(input.value);
+                        
+                    }
+                </script>
+            </center>
+        </body>
+    </head>
+</html>
